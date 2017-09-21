@@ -49,7 +49,6 @@ public class SongwriterImpl implements Songwriter{
 	}
 	
 	
-	@Override
 	public void compose(Song song) {
 		System.out.println("Composer " + firstName + " " + lastName + 
 				" composed a song called " +song.getName() +
