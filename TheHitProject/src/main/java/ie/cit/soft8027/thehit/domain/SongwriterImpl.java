@@ -3,42 +3,18 @@ package ie.cit.soft8027.thehit.domain;
 import ie.cit.soft8027.thehit.interfaces.*;
 
 
-public class SongwriterImpl implements Songwriter{
+public class SongwriterImpl extends Person implements Songwriter{
 	
-	private String firstName;
-	private String lastName;
-	private int age;
 	private Song song;
 	
 	public SongwriterImpl() {
+		super();
 	}
 	
 	public SongwriterImpl(String firstName, String lastName, int age, Song song) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.age = age;
+		super(firstName, lastName, age);
 		this.song = song;
-	}
-	
-	public String getFirstName() {
-		return firstName;
-	}
-	public void setfirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
+		
 	}
 	
 	public Song getSong() {
@@ -50,7 +26,7 @@ public class SongwriterImpl implements Songwriter{
 	
 	
 	public void compose(Song song) {
-		System.out.println("Composer " + firstName + " " + lastName + 
+		System.out.println("Composer " + getFirstName() + " " + getLastName() +
 				" composed a song called " +song.getName() +
 				". This song has the following lyrics "+ song.getLyrics());
 	}

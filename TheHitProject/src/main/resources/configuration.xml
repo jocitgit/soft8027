@@ -4,4 +4,40 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="ourFirstBean" class="ie.cit.soft8027.thehit.domain.SongwriterImpl"></bean>
+	
+	<bean id="marysSong" class="ie.cit.soft8027.thehit.domain.Song">
+		<constructor-arg name="name" value="Mary's farm"></constructor-arg>
+		<constructor-arg name="lyrics" value="Mary has a little lamb, her fleece is white as snow"></constructor-arg>
+	</bean>	 
+	<bean id="mary" class="ie.cit.soft8027.thehit.domain.SongwriterImpl">
+		<constructor-arg name="firstName" value="Mary"></constructor-arg>
+		<constructor-arg name="lastName" value="O'Shea"></constructor-arg>
+		<constructor-arg name="age" value="21"></constructor-arg>
+		<constructor-arg name="song" ref="marysSong"></constructor-arg>
+	</bean>
+	<bean id="hitvenue" class="ie.cit.soft8027.thehit.domain.Venue">
+		<constructor-arg name="name" value="3Arena"></constructor-arg>
+		<constructor-arg name="addressLine1" value="North Wall Quay"></constructor-arg>
+		<constructor-arg name="addressLine2" value="Dublin 1"></constructor-arg>
+		<constructor-arg name="country" value="Ireland"></constructor-arg>
+		<constructor-arg name="capacity" value="9000"></constructor-arg>
+	</bean>
+	<bean id="setterBeanSong" class="ie.cit.soft8027.thehit.domain.Song">
+		<property name="name" value="Setter Marys song"></property>
+		<property name="lyrics" value="Setter lyrics lyrics"></property>		
+	</bean>
+	<bean id="setterSongwriter" class="ie.cit.soft8027.thehit.domain.SongwriterImpl">
+		<constructor-arg name="firstName" value="Billy"></constructor-arg>
+		<constructor-arg name="lastName" value="Walsh"></constructor-arg>
+		<constructor-arg name="age" value="21"></constructor-arg>
+		<constructor-arg name="song" ref="setterBeanSong"></constructor-arg>
+	</bean>
+	<bean id="currency" class="ie.cit.soft8027.thehit.factories.CurrencyFactory" factory-method="createCurrency">
+		<constructor-arg name="country" value="Ireland"></constructor-arg>
+	</bean> 
+	<bean id="theStage" class="ie.cit.soft8027.thehit.domain.Stage" factory-method="getInstance"> 
+	</bean>  
+	<bean id="theStage1" class="ie.cit.soft8027.thehit.domain.Stage" factory-method="getInstance">
+	</bean>
+
 </beans>
