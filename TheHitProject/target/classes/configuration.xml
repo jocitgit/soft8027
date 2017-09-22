@@ -32,6 +32,12 @@
 		<constructor-arg name="age" value="21"></constructor-arg>
 		<constructor-arg name="song" ref="setterBeanSong"></constructor-arg>
 	</bean>
+	<bean id="setterSongwriter2" class="ie.cit.soft8027.thehit.domain.SongwriterImpl">
+		<property name="firstName" value="Billy2"></property>
+		<property name="lastName" value="Walsh2"></property>
+		<property name="age" value="21"></property>
+		<property name="song" ref="setterBeanSong"></property>		
+	</bean>
 	<bean id="currency" class="ie.cit.soft8027.thehit.factories.CurrencyFactory" factory-method="createCurrency">
 		<constructor-arg name="country" value="Ireland"></constructor-arg>
 	</bean> 

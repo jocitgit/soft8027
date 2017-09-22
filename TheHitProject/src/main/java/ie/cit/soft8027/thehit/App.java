@@ -41,7 +41,15 @@ public class App {
 	System.out.println("Songwriter second name is: "+setterDISongwriter.getLastName());
 	System.out.println("Songwriter age is: "+setterDISongwriter.getAge());
 	System.out.println("Songwriter song details are: Song name: "+setterDISongwriter.getSong().getName()+
-	        		" Song lyrics are: "+setterDISongwriter.getSong().getLyrics());                                
+	        		" Song lyrics are: "+setterDISongwriter.getSong().getLyrics());          
+	
+	SongwriterImpl setterDISongwriter2 =(SongwriterImpl)context.getBean("setterSongwriter2");
+	System.out.println("Songwriter firstname is: "+ setterDISongwriter2.getFirstName());
+	System.out.println("Songwriter second name is: "+setterDISongwriter2.getLastName());
+	System.out.println("Songwriter age is: "+setterDISongwriter2.getAge());
+	System.out.println("Songwriter song details are: Song name: "+setterDISongwriter2.getSong().getName()+
+	        		" Song lyrics are: "+setterDISongwriter2.getSong().getLyrics());                                
+	                                
 	                                
 	
 	Currency currency=(Currency)context.getBean("currency");
@@ -54,6 +62,7 @@ public class App {
 	System.out.println("Stage instance value: "+ stage.toString());
 	Stage stage1=(Stage)context.getBean("theStage1");
 	System.out.println("Stage instance value: "+ stage1.toString());
+	
 	
 	}
 }               
