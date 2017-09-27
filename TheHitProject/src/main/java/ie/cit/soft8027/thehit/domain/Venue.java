@@ -1,5 +1,7 @@
 package ie.cit.soft8027.thehit.domain;
 
+import org.springframework.beans.factory.annotation.Required;
+
 public class Venue {
 	
 	private String name;
@@ -51,6 +53,8 @@ public class Venue {
 	public int getCapacity() {
 		return capacity;
 	}
+	
+	@Required
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}

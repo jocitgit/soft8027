@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="byType">
+
+	<!--Spring autowiring byName example -->
+	<!-- bean id "song" MUST match the SongwriterImpl property "song" for autowiring 
+		to occur -->
+	<bean id="song" class="ie.cit.soft8027.thehit.domain.Song">
+		<constructor-arg name="name" value="silly nsss"></constructor-arg>
+		<constructor-arg name="lyrics" value="Hello world"></constructor-arg>
+	</bean>
+
+	<!-- autowiring byName -->
+	<bean id="autoWireExampleBean" class="ie.cit.soft8027.thehit.domain.SongwriterImpl"
+		autowire="byName">
+		<property name="firstName" value="Peter"></property>
+		<property name="lastName" value="Summers"></property>
+		<property name="age" value="33"></property>
+	</bean>
+
+	<!-- Autowiring byType example -->
+	<!-- As long as only one bean of type Song exists ie following could not 
+		be included: -->
+	<!--Spring autowiring byName example -->
+	<!-- <bean id="anotherSongType" class="ie.cit.soft8027.thehit.domain.Song"> 
+		<constructor-arg name="name" value="another song"></constructor-arg> <constructor-arg 
+		name="lyrics" value="another songs lyrics"></constructor-arg> </bean> -->
+
+	<bean id="autoWireExampleByTypeBean" class="ie.cit.soft8027.thehit.domain.SingerImpl"
+		autowire="byType">
+		<property name="firstName" value="YourName"></property>
+		<property name="lastName" value="YourSurname"></property>
+		<property name="age" value="21"></property>
+	</bean>
+
+	<bean id="autoWireExampleByDefaultBean" class="ie.cit.soft8027.thehit.domain.SingerImpl">
+		<property name="firstName" value="YourName"></property>
+		<property name="lastName" value="YourSurname"></property>
+		<property name="age" value="21"></property>
+	</bean>
+
+	<!-- Autowiring byConstructor example -->
+	<bean id="autoWireExampleConstructorBean" class="ie.cit.soft8027.thehit.domain.SongwriterImpl"
+		autowire="constructor">
+		<constructor-arg name="firstName" value="Jane"></constructor-arg>
+		<constructor-arg name="lastName" value="Lee"></constructor-arg>
+		<constructor-arg name="age" value="33"></constructor-arg>
+	</bean>
+	
+	<!-- Not using autowiring -->
+	<bean id="notUsingAutoWireByNameBean" class="ie.cit.soft8027.thehit.domain.SongwriterImpl" autowire="byName">
+		<property name="firstName" value="Peter"></property>
+		<property name="song" ref="song"></property>
+	</bean>
+
+</beans>
