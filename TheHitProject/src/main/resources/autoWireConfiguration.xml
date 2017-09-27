@@ -54,5 +54,33 @@
 		<property name="firstName" value="Peter"></property>
 		<property name="song" ref="song"></property>
 	</bean>
+	
+	
+	<bean id="ticketPrototype" class="ie.cit.soft8027.thehit.domain.Ticket"
+		scope="prototype">
+		<constructor-arg name="ticketClass" value="premium"></constructor-arg>
+		<constructor-arg name="ticketNumber" value="1"></constructor-arg>
+		<constructor-arg name="ticketPrice" value="100"></constructor-arg>
+	</bean>
+	<bean id="autowireByTypeAudience" class="ie.cit.soft8027.thehit.domain.AudienceImpl"
+		autowire="byType">
+		<property name="firstName" value="first"></property>
+		<property name="lastName" value="last"></property>
+		<property name="age" value="21"></property>
+	</bean>
+
+	<bean id="autowireByNameAudience" class="ie.cit.soft8027.thehit.domain.AudienceImpl">
+		<property name="firstName" value="YourName"></property>
+		<property name="lastName" value="YourSurname"></property>
+		<property name="age" value="21"></property>
+	</bean>
+
+	<!-- Autowiring byConstructor example -->
+	<bean id="autowireByConstructorAudience" class="ie.cit.soft8027.thehit.domain.AudienceImpl"
+		autowire="constructor">
+		<constructor-arg name="firstName" value="Jane"></constructor-arg>
+		<constructor-arg name="lastName" value="Lee"></constructor-arg>
+		<constructor-arg name="age" value="33"></constructor-arg>
+	</bean>
 
 </beans>

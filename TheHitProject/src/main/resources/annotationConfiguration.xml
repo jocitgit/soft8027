@@ -16,6 +16,58 @@
 	<bean id="annotationRequiredExample" class="ie.cit.soft8027.thehit.domain.Venue">
 		<property name="capacity" value="500" />
 	</bean>
+	
+	<bean id="someSong" class="ie.cit.soft8027.thehit.domain.Song">
+		<property name="name" value="some song name"></property>
+		<property name="lyrics" value="some song lyrics"></property>
+	</bean>
+	
+	<!--  need to use @Qualifier if add another 'song' bean -->
+	<bean id="anotherSong" class="ie.cit.soft8027.thehit.domain.Song">
+		<property name="name" value="another song name"></property>
+		<property name="lyrics" value="another song lyrics"></property>
+	</bean>
+	
+	
+	<bean id="autowiredSinger" class="ie.cit.soft8027.thehit.domain.SingerImpl"></bean>
+		
+	
+	
 
+	<!--  don't autowire with multiple overloaded constructors
+	<bean id="autowiredConstructorSinger" class="ie.cit.soft8027.thehit.domain.SingerImpl"> 
+		<constructor-arg name="firstName" value="Jo"></constructor-arg> 
+		<constructor-arg name="lastName" value="Bloggs"></constructor-arg> 
+		<constructor-arg name="age" value="30"></constructor-arg> 
+		 <constructor-arg name="song" ref="someSong"></constructor-arg> 
+	</bean> -->
+
+	<bean id="qualifierSinger" class="ie.cit.soft8027.thehit.domain.SingerImpl">
+		<property name="firstName" value="Fred"></property>
+		<property name="lastName" value="Flintstone"></property>
+		<property name="age" value="50"></property>
+	</bean>
+	
+	
+	<bean id="premiumTicketPrototype" class="ie.cit.soft8027.thehit.domain.Ticket"
+		scope="prototype">
+		<constructor-arg name="ticketClass" value="premium"></constructor-arg>
+		<constructor-arg name="ticketNumber" value="1"></constructor-arg>
+		<constructor-arg name="ticketPrice" value="100"></constructor-arg>
+	</bean>
+	<bean id="budgetTicketPrototype" class="ie.cit.soft8027.thehit.domain.Ticket"
+		scope="prototype">
+		<constructor-arg name="ticketClass" value="budget"></constructor-arg>
+		<constructor-arg name="ticketNumber" value="2"></constructor-arg>
+		<constructor-arg name="ticketPrice" value="50"></constructor-arg>
+	</bean>
+	
+	<bean id="audienceImpl" class="ie.cit.soft8027.thehit.domain.AudienceImpl"
+		scope="prototype">
+		<property name="firstName" value="Homer"></property>
+		<property name="lastName" value="simpson"></property>
+		<property name="age" value="50"></property>
+	</bean>
+		
 </beans>
 

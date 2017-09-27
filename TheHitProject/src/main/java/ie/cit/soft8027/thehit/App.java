@@ -170,8 +170,15 @@ public class App {
 	 System.out.println("Song writer age is: "+ autoWireOverride.getAge());
 	 System.out.println("Song writer song name is: "+ autoWireOverride.getSong().getName()+ " lyrics: "+autoWireOverride.getSong().getLyrics());      
 	
+	 //Lab3
 	 
+	 AudienceImpl audienceImplByType = (AudienceImpl)autoWirecontext.getBean("autowireByTypeAudience");
+	 AudienceImpl audienceImplByName = (AudienceImpl)autoWirecontext.getBean("autowireByNameAudience");
+	 AudienceImpl audienceImplByConstructor = (AudienceImpl)autoWirecontext.getBean("autowireByConstructorAudience");
 	 
+	 System.out.println(audienceImplByType);
+	 System.out.println(audienceImplByName);
+	 System.out.println(audienceImplByConstructor);
 	}
 	
 }               
