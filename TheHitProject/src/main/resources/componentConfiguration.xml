@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<context:component-scan base-package="ie.cit.soft8027.thehit" />
+	<context:property-placeholder location="classpath:prop.properties"/> 
+
+<!--  Use this to override the bean named song2 created by @Component 
+	<bean id="song2" class="ie.cit.soft8027.thehit.domain.Song2">
+		<constructor-arg name="name" value="non default song name"></constructor-arg>
+		<constructor-arg name="lyrics" value="non default lyrics"></constructor-arg>
+	</bean>
+	
+	-->
+
+</beans>
