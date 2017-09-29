@@ -1,1 +1,1 @@
-SOFT8027 projects repo
+SOFT8027 code examples and experiments
